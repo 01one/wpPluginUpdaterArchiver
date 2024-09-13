@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Plugin Updater</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+			user-select:none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .section {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .section h2 {
+            margin-top: 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h2>Select Plugin Directory</h2>
+            <button id="selectPluginDir">Browse</button>
+            <p id="pluginDir">No directory selected</p>
+        </div>
+
+        <div class="section">
+            <h2>Select Backup Directory</h2>
+            <button id="selectBackupDir">Browse</button>
+            <p id="backupDir">No directory selected</p>
+        </div>
+
+        <div class="section">
+            <h2>Installed Plugins</h2>
+            <ul id="pluginList"></ul>
+        </div>
+
+        <div class="section">
+            <button id="updatePlugins">Update Plugins</button>
+            <pre id="logOutput"></pre>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
