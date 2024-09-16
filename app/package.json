@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "WordPress Plugin Updater and Archiver",
   "main": "main.js",
+  "homepage": "https://github.com/01one/wpPluginUpdaterArchiver",
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder"
