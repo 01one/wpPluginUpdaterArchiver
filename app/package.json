@@ -1,8 +1,8 @@
 {
-  "name": "wpPluginUpdaterArchiver",
+  "name": "wpPluginUpdater",
   "version": "1.0.0",
   "description": "WordPress Plugin Updater and Archiver",
-  "main": "main.js",
+  "main": "src/main.js",
   "homepage": "https://github.com/01one/wpPluginUpdaterArchiver",
   "scripts": {
     "start": "electron .",
@@ -29,19 +29,17 @@
     "electron-installer-snap": "^5.2.0"
   },
   "build": {
-    "appId": "com.01one.wordpresspluginarhiver",
-    "productName": "wpPluginUpdaterArchiver",
+    "appId": "com.01one.wppluginupdater",
+    "productName": "wpPluginUpdater",
     "files": [
-      "main.js",
-      "renderer.js",
-      "index.html",
+      "src/**/*",
       "node_modules/**/*"
     ],
     "win": {
       "target": [
         "nsis"
       ],
-      "icon": "build/icons/icon.png"
+      "icon": "app/icons/icon.png"
     },
     "linux": {
       "target": [
@@ -49,11 +47,11 @@
         "AppImage"
       ],
       "category": "Development",
-      "icon": "build/icons/icon.png"
+      "icon": "app/icons/icon.png"
     },
     "mac": {
       "target": "dmg",
-      "icon": "build/icons/icon.icns"
+      "icon": "app/icons/icon.icns"
     }
   }
 }

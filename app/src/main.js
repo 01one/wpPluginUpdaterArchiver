@@ -15,15 +15,14 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        icon: path.join(__dirname, 'build/icons/icon.png'),
+        icon: path.join(__dirname, '../icons/icon.png'),
         webPreferences: {
-            //preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
             contextIsolation: false
         }
     });
 
-    mainWindow.loadFile('index.html');
+    mainWindow.loadFile(path.join(__dirname, 'index.html'));
     Menu.setApplicationMenu(null);
 }
 
