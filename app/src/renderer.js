@@ -1,6 +1,6 @@
 const { ipcRenderer } = require('electron');
 
-// DOM Elements
+
 const selectPluginDirButton = document.getElementById('selectPluginDir');
 const selectBackupDirButton = document.getElementById('selectBackupDir');
 const updatePluginsButton = document.getElementById('updatePlugins');
@@ -76,7 +76,7 @@ updatePluginsButton.addEventListener('click', async () => {
             if (latestVersion && latestVersion !== currentVersion) {
                 logMessage(`Updating ${pluginName} from version ${currentVersion} to ${latestVersion}.`);
                 await ipcRenderer.invoke('backup-plugin', pluginDir, backupDir, pluginName, currentVersion);
-                const downloadUrl = `https://downloads.wordpress.org/plugin/${pluginName}.zip`; // Adjust this if you have a specific URL
+                const downloadUrl = `https://downloads.wordpress.org/plugin/${pluginName}.zip`;
                 const success = await ipcRenderer.invoke('update-plugin', downloadUrl, pluginDir, pluginName);
                 if (success) {
                     logMessage(`${pluginName} has been updated to version ${latestVersion}.`);
